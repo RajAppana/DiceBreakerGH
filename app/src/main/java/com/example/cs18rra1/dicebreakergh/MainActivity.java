@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import java.util.ArrayList;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,26 +53,28 @@ public class MainActivity extends AppCompatActivity {
         int DICEBREAKER_number = r2.nextInt(6)+1;
         TextView ql = (TextView) this.findViewById(R.id.questionlist);
 
+        ArrayList<String> question_list = new ArrayList<String>(Arrays.asList("If you could go anywhere in the world where would you go?", "If you were stranded on a desert island what three things would you take with you?", "If you could only eat one food for the rest of your life what would that be?", "If you won a million dollars what is the first thing you would buy?", "If you could spend one day with a fictional character who would it be?", "If you found a magic lantern and a genie gave you three wishes, what would you wish for?"));
+
+
         switch (DICEBREAKER_number)
         {
             case 1:
-                ql.setText("If you could go anywhere in the world where would you go?");
+                ql.setText(question_list.get(0));
              break;
-
             case 2:
-                ql.setText("If you were stranded on a desert island what three things would you take with you?");
+                ql.setText(question_list.get(1));
              break;
             case 3:
-                ql.setText("If you could only eat one food for the rest of your life what would that be?");
+                ql.setText(question_list.get(2));
              break;
             case 4:
-                ql.setText("If you won a million dollars what is the first thing you would buy?");
+                ql.setText(question_list.get(3));
              break;
             case 5:
-                ql.setText("If you could spend one day with a fictional character would it be?");
+                ql.setText(question_list.get(4));
              break;
             case 6:
-                ql.setText("If you found a magic lantern and a genie gave you three wishes, what would you wish for?");
+                ql.setText(question_list.get(5));
              break;
         }
     }
